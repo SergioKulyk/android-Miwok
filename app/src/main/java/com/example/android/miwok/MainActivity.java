@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         numbersList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent numbersListIntent = new Intent(MainActivity.this, NumbersActitvity.class);
+                Intent numbersListIntent = new Intent(MainActivity.this, NumbersActivity.class);
                 startActivity(numbersListIntent);
             }
         });
