@@ -34,8 +34,6 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         Word word = getItem(position);
 
-        ImageView describeImageView = listItemView.findViewById(R.id.describe_image_view);
-        describeImageView.setImageResource(R.mipmap.ic_launcher);
 
         TextView miwokTextView = listItemView.findViewById(R.id.miwok_text_view);
         miwokTextView.setText(word.getMiwokTranslation());
@@ -43,6 +41,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView defaultTextView = listItemView.findViewById(R.id.default_text_view);
         defaultTextView.setText(word.getDefaultTranslation());
 
+        ImageView imageView = listItemView.findViewById(R.id.describe_image_view);
+        imageView.setImageResource(word.getmImageView());
         return listItemView;
     }
 }
