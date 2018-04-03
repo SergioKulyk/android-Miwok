@@ -15,10 +15,11 @@ public class Word {
      */
     private String mMiwokTranslation;
 
+    private static final int NO_IMAGE_PROVIDER = -1;
     /**
      * Image for illustrate what a word means
      */
-    private int mImageView;
+    private int mImageResourceId = NO_IMAGE_PROVIDER;
 
     /**
      * Create a new Word object.
@@ -35,7 +36,7 @@ public class Word {
     public Word(String defaultTranslation, String miwokTranslation, int mImageView) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
-        this.mImageView = mImageView;
+        this.mImageResourceId = mImageView;
     }
 
     /**
@@ -55,7 +56,14 @@ public class Word {
     /**
      * Get the image of the word.
      */
-    public int getmImageView() {
-        return mImageView;
+    public int getImageResourceId() {
+        return mImageResourceId;
+    }
+
+    /**
+     *  Return true if word has image.z
+     */
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE_PROVIDER;
     }
 }
