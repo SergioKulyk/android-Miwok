@@ -16,6 +16,11 @@ public class Word {
     private String mMiwokTranslation;
 
     /**
+     * Image for illustrate what a word means
+     */
+    private int mImageView;
+
+    /**
      * Create a new Word object.
      *
      * @param defaultTranslation is the word in a language that the user is already familiar with
@@ -25,6 +30,12 @@ public class Word {
     public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+    }
+
+    public Word(String defaultTranslation, String miwokTranslation, int mImageView) {
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        this.mImageView = mImageView;
     }
 
     /**
@@ -39,5 +50,12 @@ public class Word {
      */
     public String getMiwokTranslation() {
         return mMiwokTranslation;
+    }
+
+    /**
+     * Get the image of the word.
+     */
+    public int getmImageView() {
+        return mImageView;
     }
 }
