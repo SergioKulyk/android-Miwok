@@ -43,6 +43,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         ImageView imageView = listItemView.findViewById(R.id.image);
         imageView.setImageResource(word.getmImageView());
+
         return listItemView;
     }
 }
