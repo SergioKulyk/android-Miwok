@@ -3,6 +3,7 @@ package com.example.android.miwok;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -45,6 +46,9 @@ public class FamilyActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Get the {@link Word} at the given position the user clicked on
                 Word word = (Word) parent.getItemAtPosition(position);
+
+                Log.v("FamilyActivity", "Current word: " + word);
+
 
                 // Create and set up {@link MediaPlayer} for audio resource associated
                 // with the current word
