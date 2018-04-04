@@ -15,11 +15,18 @@ public class Word {
      */
     private String mMiwokTranslation;
 
-    private static final int NO_IMAGE_PROVIDER = -1;
     /**
      * Image for illustrate what a word means
      */
     private int mImageResourceId = NO_IMAGE_PROVIDER;
+
+    private static final int NO_IMAGE_PROVIDER = -1;
+
+    /**
+     *  Sound resource ID
+     */
+    private int soundResourceId;
+
 
     /**
      * Create a new Word object.
@@ -28,15 +35,17 @@ public class Word {
      *                           (such as English)
      * @param miwokTranslation   is the word in the Miwok language
      */
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation, int soundResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        this.soundResourceId = soundResourceId;
     }
 
-    public Word(String defaultTranslation, String miwokTranslation, int mImageView) {
+    public Word(String defaultTranslation, String miwokTranslation, int mImageView, int soundResourceId) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
         this.mImageResourceId = mImageView;
+        this.soundResourceId = soundResourceId;
     }
 
     /**
@@ -65,5 +74,12 @@ public class Word {
      */
     public boolean hasImage() {
         return mImageResourceId != NO_IMAGE_PROVIDER;
+    }
+
+    /**
+     *  Return sound resource ID
+     */
+    public int getSoundResourceId() {
+        return soundResourceId;
     }
 }
