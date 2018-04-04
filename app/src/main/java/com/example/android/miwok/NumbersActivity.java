@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
 
+    /** Handles playback of all the sound files */
     private MediaPlayer mediaPlayer;
 
     @Override
@@ -36,15 +37,21 @@ public class NumbersActivity extends AppCompatActivity {
         WordAdapter adapter = new WordAdapter(this, words, R.color.category_numbers);
 
         ListView listView = findViewById(R.id.list);
+
+        // Set a click listener to play the audio when the list item is clicked on
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the {@link Word} at the given position the user clicked on
                 Word word = (Word) parent.getItemAtPosition(position);
+
+                // Create and set up {@link MediaPlayer} for audio resource associated
+                // with the current word
                 mediaPlayer = MediaPlayer.create(view.getContext(), word.getSoundResourceId());
+
+                // Start the audio file
                 mediaPlayer.start();
             }
         });
-
-        listView.setAdapter(adapter);
     }
 }

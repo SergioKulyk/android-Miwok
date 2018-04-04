@@ -1,12 +1,18 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class FamilyActivity extends AppCompatActivity {
+
+    /** Handles playback of all the sound files */
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +30,7 @@ public class FamilyActivity extends AppCompatActivity {
         words.add(new Word("younger brother", "chalitti", R.drawable.family_younger_brother, R.raw.family_younger_brother));
         words.add(new Word("older sister", "teṭe", R.drawable.family_older_sister, R.raw.family_older_sister));
         words.add(new Word("younger sister", "kolliti", R.drawable.family_younger_sister, R.raw.family_younger_sister));
-        words.add(new Word("grandmother", "ama", R.drawable.family_grandmother, R.raw.family_mother));
+        words.add(new Word("grandmother", "ama", R.drawable.family_grandmother, R.raw.family_grandmother));
         words.add(new Word("grandfather", "paapa", R.drawable.family_grandfather, R.raw.family_father));
 
         WordAdapter adapter = new WordAdapter(this, words, R.color.category_family);
@@ -32,5 +38,21 @@ public class FamilyActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.list);
 
         listView.setAdapter(adapter);
+
+        // Set a click listener to play the audio when the list item is clicked on
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Get the {@link Word} at the given position the user clicked on
+                Word word = (Word) parent.getItemAtPosition(position);
+
+                // Create and set up {@link MediaPlayer} for audio resource associated
+                // with the current word
+                mediaPlayer = MediaPlayer.create(view.getContext(), word.getSoundResourceId());
+
+                // Start the audio file
+                mediaPlayer.start();
+            }
+        });
     }
 }
