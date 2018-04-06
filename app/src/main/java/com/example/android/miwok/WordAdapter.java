@@ -2,7 +2,6 @@ package com.example.android.miwok;
 
 import android.app.Activity;
 
-import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
