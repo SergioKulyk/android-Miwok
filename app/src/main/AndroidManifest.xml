@@ -16,42 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NumbersActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name="com.example.android.miwok.NumbersActivity"
-            android:label="@string/category_numbers"
-            android:parentActivityName="com.example.android.miwok.MainActivity" >
-            <!-- Parent activity meta-data to support API level 4+ -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.miwok.MainActivity" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.example.android.miwok.FamilyActivity"
-            android:label="@string/category_family"
-            android:parentActivityName="com.example.android.miwok.MainActivity" >
-            <!-- Parent activity meta-data to support API level 4+ -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.miwok.MainActivity" />
-        </activity>
-
-        <activity android:name="com.example.android.miwok.ColorsActivity"
-            android:label="@string/category_colors"
-            android:parentActivityName="com.example.android.miwok.MainActivity" >
-            <!-- Parent activity meta-data to support API level 4+ -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.miwok.MainActivity" />
-        </activity>
-
-        <activity android:name="com.example.android.miwok.PhrasesActivity"
-            android:label="@string/category_phrases"
-            android:parentActivityName="com.example.android.miwok.MainActivity" >
-            <!-- Parent activity meta-data to support API level 4+ -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.android.miwok.MainActivity" />
-        </activity>
+        <activity android:name=".FamilyActivity" />
+        <activity android:name=".PhrasesActivity" />
+        <activity android:name=".ColorsActivity" />
     </application>
+
 </manifest>
