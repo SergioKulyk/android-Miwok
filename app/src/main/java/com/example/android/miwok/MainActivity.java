@@ -1,6 +1,7 @@
 package com.example.android.miwok;
 
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,5 +58,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(phrasesIntent);
             }
         });
+
+        // Find view pager that will allow the user to swipe between fragments
+        ViewPager viewPager = findViewById(R.id.viewpager);
+
+        // Create an adapter that knows what fragment should be shown on each page
+        CategoryFragmentPagerAdapter categoryFragmentPagerAdapter = new CategoryFragmentPagerAdapter(getSupportFragmentManager());
+
+        // Set the adapter onto view pager
+        viewPager.setAdapter(categoryFragmentPagerAdapter);
     }
 }
