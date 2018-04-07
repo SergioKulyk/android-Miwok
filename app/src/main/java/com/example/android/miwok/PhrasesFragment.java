@@ -146,7 +146,6 @@ public class PhrasesFragment extends Fragment {
         return rootView;
     }
 
-
     @Override
     public void onStop() {
         super.onStop();

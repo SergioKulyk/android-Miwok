@@ -1,9 +1,5 @@
 package com.example.android.miwok;
 
-/**
- * Created by SergeyMajor on 01.04.2018.
- */
-
 public class Word {
     /**
      * Default translation for the word
