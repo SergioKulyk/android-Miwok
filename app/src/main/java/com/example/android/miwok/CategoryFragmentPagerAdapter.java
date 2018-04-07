@@ -11,12 +11,24 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class CategoryFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    private String tabTitles[] = new String[] { "Numbers", "Family ", "Colors", "Phrases" };
+    /** Context of the app */
+    private final Context mContext;
 
-    public CategoryFragmentPagerAdapter(FragmentManager fm) {
+    /**
+     * Create a new {@link CategoryFragmentPagerAdapter} object.
+     *
+     * @param mContext is the context of the app
+     * @param fm is the fragment manager that will keep each fragment's state in the adapter
+     *           across swipes.
+     */
+    public CategoryFragmentPagerAdapter(FragmentManager fm, Context mContext) {
         super(fm);
+        this.mContext = mContext;
     }
 
+    /**
+     * Return the total number of pages.
+     */
     @Override
     public Fragment getItem(int position) {
         if (position == 0) {
@@ -30,6 +42,9 @@ public class CategoryFragmentPagerAdapter extends FragmentPagerAdapter {
         }
     }
 
+    /**
+     * Return the total number of pages.
+     */
     @Override
     public int getCount() {
         return 4;
@@ -37,6 +52,14 @@ public class CategoryFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return tabTitles[position];
+        if (position == 0) {
+            return mContext.getString(R.string.category_numbers);
+        } else if (position == 1) {
+            return mContext.getString(R.string.category_family);
+        } else if (position == 2) {
+            return mContext.getString(R.string.category_colors);
+        } else {
+            return mContext.getString(R.string.category_phrases);
+        }
     }
 }
